@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PapiJunior LAB | Contato</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.papijunior.com.br">
+  <meta property="og:title" content="PapiJunior LAB - Consultoria e Desenvolvimento">
+  <meta property="og:description" content="Especialista em Projetos e Integrações PHP">
+  <meta property="og:image" content="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/android-chrome-512x512.png">
+
+  <meta name="author" content="Paulo Jr - PapiJunior LAB">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/android-chrome-512x512.png">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/apple-touch-icon.png">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b3c5d">
+
+  <style>
+    :root {
+      --azul: #0b3c63;
+      --cinza: #f4f6f8;
+      --texto: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza);
+      color: var(--texto);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background: var(--azul);
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    /* Logo PJ no topo agora clicável */
+    .header img {
+      width: 120px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .header img:active {
+      transform: scale(0.95);
+    }
+
+    .header h1 {
+      margin: 15px 0 5px;
+      font-size: 28px;
+    }
+
+    .header p {
+      font-style: italic;
+      margin: 0;
+    }
+
+    .section {
+      padding: 30px 20px;
+    }
+
+    .name {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--azul);
+      border-bottom: 2px solid var(--azul);
+      padding-bottom: 10px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .service {
+      font-size: 16px;
+    }
+
+    .service::before {
+      content: "✔ ";
+      color: var(--azul);
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 40px;
+    }
+
+    .contact h2 {
+      color: var(--azul);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .contact a {
+      text-decoration: none;
+      color: var(--azul);
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .qr-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .qr-thumb {
+      width: 140px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .qr-thumb:hover {
+      opacity: 0.8;
+    }
+
+    /* MODAL */
+    .qr-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .qr-full {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .qr-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-save {
+      background: var(--azul);
+      color: #fff;
+    }
+
+    .btn-whats {
+      background: #25d366;
+      color: #fff;
+    }
+
+    .footer {
+      background: var(--azul);
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    @media(max-width:700px){
+      .services,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <img src="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/android-chrome-192x192.png" alt="PapiJunior LAB" onclick="openQR()">
+      <h1>PapiJunior LAB</h1>
+      <p>Transformando ideias em sistemas</p>
+    </div>
+
+    <div class="section">
+      <div class="name">Paulo Teodoro Pinto Junior</div>
+
+      <div class="services">
+        <div class="service">Consultoria em T.I.</div>
+        <div class="service">Desenvolvimento de Sistemas</div>
+        <div class="service">Gestão de Projetos</div>
+        <div class="service">Integrações (API's / Webservices)</div>
+        <div class="service">Perícias Judiciais</div>
+        <div class="service">Revenda de Software</div>
+        <div class="service">Scrum / Kanban</div>
+        <div class="service">Suporte em T.I.</div>
+        <div class="service">Treinamentos em T.I.</div>
+      </div>
+
+      <div class="contact">
+        <h2>Contato</h2>
+        <div class="contact-grid">
+          <a href="https://wa.me/5519992966346">📱 (19) 99296-6346</a>
+          <a href="mailto:paulo@papijunior.com.br">✉ paulo@papijunior.com.br</a>
+          <a href="#">📍 Piracicaba / SP</a>
+          <a href="https://www.papijunior.com.br" target="_blank">🌐 www.papijunior.com.br</a>
+        </div>
+      </div>
+
+      <div class="qr-container">
+        <img
+          src="qrcode-cartao-digital.png"
+          alt="QR Code Contato PapiJunior"
+          class="qr-thumb"
+          onclick="openQR()"
+        >
+      </div>
+
+      <div id="qrModal" class="qr-modal" onclick="closeQR()">
+        <span class="qr-close" onclick="closeQR()">&times;</span>
+        <img src="https://raw.githubusercontent.com/papijunior/papi-imagens/refs/heads/main/qrcode-cartao-digital.png" class="qr-full">
+        <p style="color: #fff; margin-top: 15px; font-size: 14px;">Toque para fechar</p>
+      </div>
+
+      <div class="buttons">
+        <a class="btn btn-save" href="paulo-teodoro-pinto-junior.vcf">
+          📇 Salvar contato
+        </a>
+
+        <a class="btn btn-whats" href="https://wa.me/5519992966346" target="_blank">
+          💬 Falar no WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      © PapiJunior LAB - Soluções em Tecnologia
+    </div>
+
+  </div>
+
+  <script>
+    function openQR() {
+      document.getElementById('qrModal').style.display = 'flex';
+    }
+
+    function closeQR() {
+      document.getElementById('qrModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
